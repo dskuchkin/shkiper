@@ -98,7 +98,7 @@
   if (canvas && !reduceMotion) {
     const ctx = canvas.getContext('2d', { alpha: true });
     let w = 0, h = 0;
-    const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    const dpr = Math.max(1, Math.min(1.5, window.devicePixelRatio || 1));
     let particles = [];
     let pulses = [];
     let raf = 0;
@@ -121,7 +121,7 @@
     };
 
     const seed = () => {
-      const count = isSmall() ? 26 : (isTouch() ? 40 : 56);
+      const count = isSmall() ? 22 : (isTouch() ? 34 : 44);
       particles = [];
       for (let i = 0; i < count; i++) {
         particles.push({
@@ -148,34 +148,43 @@
       if (!running) { raf = 0; return; }
       ctx.clearRect(0, 0, w, h);
       const ld = isSmall() ? 100 : 140;
+      const ld2 = ld * ld;
 
+      // Update positions once.
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         p.x += p.vx; p.y += p.vy;
         if (p.x < 0 || p.x > w) p.vx *= -1;
         if (p.y < 0 || p.y > h) p.vy *= -1;
+      }
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(91, 123, 255, 0.38)';
-        ctx.fill();
-
+      // Batch every connection line into ONE path → a single stroke call.
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(91, 123, 255, 0.08)';
+      ctx.beginPath();
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
         for (let j = i + 1; j < particles.length; j++) {
           const q = particles[j];
           const dx = p.x - q.x;
           const dy = p.y - q.y;
-          const d2 = dx * dx + dy * dy;
-          if (d2 < ld * ld) {
-            const op = (1 - Math.sqrt(d2) / ld) * 0.12;
-            ctx.strokeStyle = `rgba(91, 123, 255, ${op})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
+          if (dx * dx + dy * dy < ld2) {
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
-            ctx.stroke();
           }
         }
       }
+      ctx.stroke();
+
+      // Batch every dot into ONE path → a single fill call.
+      ctx.fillStyle = 'rgba(91, 123, 255, 0.5)';
+      ctx.beginPath();
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        ctx.moveTo(p.x + p.r, p.y);
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      }
+      ctx.fill();
 
       for (let i = pulses.length - 1; i >= 0; i--) {
         const pl = pulses[i];
