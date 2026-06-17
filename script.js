@@ -1,5 +1,5 @@
 /* ==========================================================
-   LOBSTER VPN — interactions
+   SHKIPER VPN — interactions
    Optimized for fast first paint and minimal jank.
    ========================================================== */
 (function () {
@@ -157,7 +157,7 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 138, 101, 0.38)';
+        ctx.fillStyle = 'rgba(91, 123, 255, 0.38)';
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
@@ -167,7 +167,7 @@
           const d2 = dx * dx + dy * dy;
           if (d2 < ld * ld) {
             const op = (1 - Math.sqrt(d2) / ld) * 0.12;
-            ctx.strokeStyle = `rgba(255, 138, 101, ${op})`;
+            ctx.strokeStyle = `rgba(91, 123, 255, ${op})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -184,7 +184,7 @@
         if (pl.a <= 0 || pl.r > pl.max) { pulses.splice(i, 1); continue; }
         ctx.beginPath();
         ctx.arc(pl.x, pl.y, pl.r, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(255, 87, 51, ${pl.a})`;
+        ctx.strokeStyle = `rgba(42, 86, 232, ${pl.a})`;
         ctx.lineWidth = 1.2;
         ctx.stroke();
       }
