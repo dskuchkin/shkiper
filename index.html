@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0F" />
+  <title>LOBSTER VPN — Сбер, Озон, MAX и YouTube без рекламы. Включил и забыл.</title>
+  <meta name="description" content="Единственный VPN в России, с которым работают Сбер, Озон, Wildberries, MAX. YouTube без рекламы и замедления. Антиглушилки LTE: интернет работает даже во время отключений. 1 день бесплатно." />
+  <meta property="og:title" content="LOBSTER VPN — Включил и забыл. Работает с банками, маркетплейсами и YouTube без рекламы." />
+  <meta property="og:description" content="Антиглушилки LTE, YouTube без рекламы, обход блокировок и работа с российскими сервисами одновременно." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=28" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🦞</text></svg>" />
+</head>
+<body>
+
+  <!-- ==========================================================
+       SVG icon sprite — UI icons + brand-styled icons
+       ========================================================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- UI icons (currentColor) -->
+      <symbol id="i-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+      <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-unlock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
+      <symbol id="i-no-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="2" x2="22" y2="22"/><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+      <symbol id="i-turtle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M6 14c-1 0-3 1-3 3"/><path d="M18 14c1 0 3 1 3 3"/><path d="M9 19l-1 3"/><path d="M15 19l1 3"/><circle cx="12" cy="5" r="3"/><path d="M9 7c-1 1-3 2-4 2"/></symbol>
+      <symbol id="i-skull" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="M16 20a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20"/></symbol>
+      <symbol id="i-battery-low" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2" ry="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="11" x2="6" y2="13"/></symbol>
+      <symbol id="i-battery-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2" ry="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="11" x2="6" y2="13"/><line x1="10" y1="11" x2="10" y2="13"/><line x1="14" y1="11" x2="14" y2="13"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.5 4.5L6 9l4.5 1.5L12 15l1.5-4.5L18 9l-4.5-1.5L12 3z"/><path d="M5 17l-1 3 3-1"/><path d="M19 17l1 3-3-1"/></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></symbol>
+      <symbol id="i-undo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/></symbol>
+      <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+      <symbol id="i-fire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+      <symbol id="i-no-ad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="5" y1="5" x2="19" y2="19"/><path d="M9 9h2v6h-1"/><path d="M14 9v6"/><path d="M14 9c1 0 2 .5 2 1.5S15 12 14 12"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-7h3z"/><path d="M3 19a2 2 0 0 0 2 2h1v-7H3z"/></symbol>
+      <symbol id="i-ban" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></symbol>
+      <symbol id="i-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
+
+      <!-- Brand-styled icons (own colours, full-color SVG) -->
+
+      <!-- Сбер: green circle + white swoosh -->
+      <symbol id="b-sber" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16" fill="#21A038"/>
+        <path d="M22 11.5c-1.6-1.5-3.7-2.4-6-2.4-4.7 0-8.5 3.8-8.5 8.5 0 2.3.9 4.4 2.4 6l1.3-1.3c-1.1-1.1-1.8-2.7-1.8-4.4 0-3.4 2.8-6.2 6.2-6.2 1.7 0 3.2.7 4.4 1.8l2-2z" fill="#fff"/>
+        <path d="M22 9.4l-7.5 7.5-3-3-1.6 1.6 4.6 4.6L23.6 11l-1.6-1.6z" fill="#fff"/>
+      </symbol>
+
+      <!-- Озон: blue with white O + arrow -->
+      <symbol id="b-ozon" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="8" fill="#005BFF"/>
+        <text x="16" y="22" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="16" fill="#fff" letter-spacing="-0.5">OZON</text>
+      </symbol>
+
+      <!-- Wildberries: pink/purple gradient W -->
+      <symbol id="b-wb" viewBox="0 0 32 32">
+        <defs>
+          <linearGradient id="wb-g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#CB11AB"/>
+            <stop offset="1" stop-color="#481173"/>
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="8" fill="url(#wb-g)"/>
+        <text x="16" y="22" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="14" fill="#fff" letter-spacing="-0.5">WB</text>
+      </symbol>
+
+      <!-- MAX (мессенджер): синий → красный градиент M -->
+      <symbol id="b-max" viewBox="0 0 32 32">
+        <defs>
+          <linearGradient id="max-g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3D7BFF"/>
+            <stop offset="1" stop-color="#FF3D2E"/>
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="10" fill="url(#max-g)"/>
+        <text x="16" y="22" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="13" fill="#fff" letter-spacing="-0.3">MAX</text>
+      </symbol>
+
+      <!-- Яндекс: красный квадрат + Я -->
+      <symbol id="b-yandex" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="6" fill="#FC3F1D"/>
+        <text x="16" y="23" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="20" fill="#fff">Я</text>
+      </symbol>
+
+      <!-- Кинопоиск: оранжевый круг с play -->
+      <symbol id="b-kinopoisk" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="8" fill="#FF5500"/>
+        <polygon points="13,10 23,16 13,22" fill="#fff"/>
+      </symbol>
+
+      <!-- VK: синий квадрат -->
+      <symbol id="b-vk" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="8" fill="#0077FF"/>
+        <text x="16" y="22" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="13" fill="#fff" letter-spacing="-0.5">VK</text>
+      </symbol>
+
+      <!-- YouTube: красный rounded rect с play -->
+      <symbol id="b-youtube" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="8" fill="#FF0033"/>
+        <polygon points="13,10 23,16 13,22" fill="#fff"/>
+      </symbol>
+
+      <!-- Instagram: розово-оранжевый градиент camera -->
+      <symbol id="b-instagram" viewBox="0 0 32 32">
+        <defs>
+          <linearGradient id="ig-g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#FEDA77"/>
+            <stop offset=".4" stop-color="#F58529"/>
+            <stop offset=".7" stop-color="#DD2A7B"/>
+            <stop offset="1" stop-color="#8134AF"/>
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="8" fill="url(#ig-g)"/>
+        <rect x="8" y="8" width="16" height="16" rx="5" fill="none" stroke="#fff" stroke-width="2"/>
+        <circle cx="16" cy="16" r="4" fill="none" stroke="#fff" stroke-width="2"/>
+        <circle cx="22" cy="10" r="1.2" fill="#fff"/>
+      </symbol>
+
+      <!-- Telegram: голубой круг с paper plane -->
+      <symbol id="b-telegram" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16" fill="#229ED9"/>
+        <path d="M7.5 15.7l16.4-6.4c.8-.3 1.5.2 1.2 1.4l-2.8 13.1c-.2 1-.8 1.2-1.6.7l-4.4-3.2-2.1 2c-.2.2-.4.4-.9.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2l-10.4 6.5-4.5-1.4c-1-.3-1-.9.2-1.4z" fill="#fff"/>
+      </symbol>
+
+      <!-- Авито: зелёный круг с А -->
+      <symbol id="b-avito" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16" fill="#00B856"/>
+        <text x="16" y="23" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="18" fill="#fff">A</text>
+      </symbol>
+
+      <!-- Госуслуги: синий с триколор-подложкой -->
+      <symbol id="b-gosuslugi" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="8" fill="#0066B3"/>
+        <rect x="6" y="10" width="20" height="3" fill="#fff"/>
+        <rect x="6" y="13" width="20" height="3" fill="#0039A6"/>
+        <rect x="6" y="16" width="20" height="3" fill="#D52B1E"/>
+        <text x="16" y="26" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="6" fill="#fff">ГОСУСЛУГИ</text>
+      </symbol>
+
+      <!-- РЖД: красный с RZD -->
+      <symbol id="b-rzd" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="6" fill="#E21A1A"/>
+        <text x="16" y="22" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="11" fill="#fff" letter-spacing="-0.3">РЖД</text>
+      </symbol>
+
+      <!-- Альфа-Банк: красный с А -->
+      <symbol id="b-alfa" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="6" fill="#EF3124"/>
+        <path d="M11 22h-2.5l4-12h3l4 12h-2.5l-.8-2.6h-4.4L11 22zm1.4-4.6h3.2L14 12.7l-1.6 4.7zM21.5 21.5h-1.5v-1h1.5v1z" fill="#fff"/>
+      </symbol>
+
+      <!-- Т-Банк (Тинькофф): жёлтый с Т -->
+      <symbol id="b-tbank" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="6" fill="#FFDD2D"/>
+        <text x="16" y="23" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="18" fill="#000">T</text>
+      </symbol>
+
+      <!-- ВТБ: синий с буквами -->
+      <symbol id="b-vtb" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="6" fill="#1973B7"/>
+        <text x="16" y="22" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="10" fill="#fff" letter-spacing="-0.3">ВТБ</text>
+      </symbol>
+
+      <!-- Megamarket: зелёно-синий -->
+      <symbol id="b-megamarket" viewBox="0 0 32 32">
+        <defs>
+          <linearGradient id="mm-g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#21A038"/>
+            <stop offset="1" stop-color="#005BFF"/>
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="8" fill="url(#mm-g)"/>
+        <text x="16" y="22" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="900" font-size="11" fill="#fff" letter-spacing="-0.3">MM</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ==========================================================
+       Header — minimal: logo + login
+       ========================================================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="LOBSTER VPN">
+        <span class="logo__icon" aria-hidden="true">🦞</span>
+        <span class="logo__text">LOBSTER<span class="logo__accent"> VPN</span></span>
+      </a>
+      <div class="header__actions">
+        <button class="btn btn--login btn--sm" data-open-login type="button">Войти</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       HERO — must hook in 5 seconds
+       ========================================================== -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <canvas id="bg-canvas"></canvas>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+      <div class="hero__grid"></div>
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <!-- Маскот LOBSTER VPN (положите свою картинку в media/lobster.png) -->
+        <figure class="hero-mascot" aria-hidden="true">
+          <img class="hero-mascot__img"
+               src="media/lobster.webp"
+               alt="Маскот LOBSTER VPN"
+               loading="eager"
+               decoding="async"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="hero-mascot__fallback">🦞</div>
+        </figure>
+
+        <h1 class="hero__title">
+          Сбер, Озон и MAX работают.<br/>
+          YouTube&nbsp;&mdash; <span class="text-gradient">без рекламы.</span>
+        </h1>
+        <p class="hero__subtitle">
+          Единственный VPN в РФ, с которым российские сервисы и зарубежные приложения работают одновременно.
+        </p>
+
+        <ul class="hero__bullets">
+          <li>
+            <span class="hero__bullet-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></span>
+            <span class="hero__bullet-label">Работает в глушение&nbsp;сети</span>
+          </li>
+          <li>
+            <span class="hero__bullet-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span>
+            <span class="hero__bullet-label">Обходит блокировки&nbsp;РКН</span>
+          </li>
+          <li>
+            <span class="hero__bullet-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-lock"/></svg></span>
+            <span class="hero__bullet-label">Без логов и&nbsp;данных</span>
+          </li>
+        </ul>
+
+        <div class="hero__cta">
+          <button class="btn btn--primary btn--lg" data-open-login type="button">
+            Попробовать 1 день бесплатно
+            <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow-right"/></svg>
+          </button>
+        </div>
+        <p class="hero__risk-line">Без привязки карты</p>
+
+        <div class="hero__trust">
+          <div class="trust-item">
+            <strong>4.87</strong>
+            <span>12 400+ отзывов</span>
+          </div>
+          <div class="trust-item">
+            <strong>180k+</strong>
+            <span>активных клиентов</span>
+          </div>
+          <div class="trust-item">
+            <strong>99.98%</strong>
+            <span>аптайм за год</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual: iPhone 17 Pro Max mockup -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="phone phone--ip17">
+          <div class="phone__screen">
+            <img class="phone__screen-img"
+                 src="media/iphone-screen.png"
+                 alt="Скриншот приложения LOBSTER VPN"
+                 loading="lazy"
+                 decoding="async">
+          </div>
+          <div class="phone__bezel" aria-hidden="true"></div>
+        </div>
+        <div class="hero__floating hero__floating--1">
+          <span class="hero__floating-ic ok"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
+          <div>
+            <strong>Озон открылся</strong>
+            <small>с включённым VPN</small>
+          </div>
+        </div>
+        <div class="hero__floating hero__floating--2">
+          <span class="hero__floating-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-ad"/></svg></span>
+          <div>
+            <strong>YouTube без рекламы</strong>
+            <small>и без замедления</small>
+          </div>
+        </div>
+        <div class="hero__floating hero__floating--3">
+          <span class="hero__floating-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></span>
+          <div>
+            <strong>LTE стабильно</strong>
+            <small>обход глушения</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee logos -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/sber.svg" alt="" loading="lazy" decoding="async"> Сбер</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/tinkoff.svg" alt="" loading="lazy" decoding="async"> Т-Банк</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/alfa.svg" alt="" loading="lazy" decoding="async"> Альфа-Банк</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/vtb.svg" alt="" loading="lazy" decoding="async"> ВТБ</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-ozon"/></svg> Озон</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-wb"/></svg> Wildberries</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-megamarket"/></svg> Megamarket</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/yandex/default.svg" alt="" loading="lazy" decoding="async"> Яндекс</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-kinopoisk"/></svg> Кинопоиск</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-max"/></svg> MAX</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/vk/default.svg" alt="" loading="lazy" decoding="async"> VK</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-avito"/></svg> Авито</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-gosuslugi"/></svg> Госуслуги</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-rzd"/></svg> РЖД</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/youtube/default.svg" alt="" loading="lazy" decoding="async"> YouTube</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/instagram/default.svg" alt="" loading="lazy" decoding="async"> Instagram</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/telegram/default.svg" alt="" loading="lazy" decoding="async"> Telegram</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/openai/default.svg" alt="" loading="lazy" decoding="async"> ChatGPT</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/claude/default.svg" alt="" loading="lazy" decoding="async"> Claude</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/gemini/default.svg" alt="" loading="lazy" decoding="async"> Gemini</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/perplexity/default.svg" alt="" loading="lazy" decoding="async"> Perplexity</span>
+        <!-- duplicate for infinite scroll -->
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/sber.svg" alt="" loading="lazy" decoding="async"> Сбер</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/tinkoff.svg" alt="" loading="lazy" decoding="async"> Т-Банк</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/alfa.svg" alt="" loading="lazy" decoding="async"> Альфа-Банк</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/vtb.svg" alt="" loading="lazy" decoding="async"> ВТБ</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-ozon"/></svg> Озон</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-wb"/></svg> Wildberries</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-megamarket"/></svg> Megamarket</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/yandex/default.svg" alt="" loading="lazy" decoding="async"> Яндекс</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-kinopoisk"/></svg> Кинопоиск</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-max"/></svg> MAX</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/vk/default.svg" alt="" loading="lazy" decoding="async"> VK</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-avito"/></svg> Авито</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-gosuslugi"/></svg> Госуслуги</span>
+        <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-rzd"/></svg> РЖД</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/youtube/default.svg" alt="" loading="lazy" decoding="async"> YouTube</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/instagram/default.svg" alt="" loading="lazy" decoding="async"> Instagram</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/telegram/default.svg" alt="" loading="lazy" decoding="async"> Telegram</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/openai/default.svg" alt="" loading="lazy" decoding="async"> ChatGPT</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/claude/default.svg" alt="" loading="lazy" decoding="async"> Claude</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/gemini/default.svg" alt="" loading="lazy" decoding="async"> Gemini</span>
+        <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/perplexity/default.svg" alt="" loading="lazy" decoding="async"> Perplexity</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       PROBLEM (PAS — Agitate the pain)
+       ========================================================== -->
+  <section class="section section--dark" id="problem">
+    <div class="container">
+      <div class="section__head">
+        <div class="eyebrow">Знакомо?</div>
+        <h2 class="section__title">Обычный VPN ломает <span class="text-gradient">пол-интернета</span></h2>
+        <p class="section__lead">В апреле 2026 Минцифры обязало Сбер, Озон, Яндекс, MAX и десятки других сервисов блокировать пользователей с VPN. По данным РКН, заблокировано <strong>469+ VPN-сервисов</strong>. Каждый день — новые проблемы.</p>
+      </div>
+      <div class="pains">
+        <div class="pain">
+          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></div>
+          <h3>Включил VPN — русские приложения не открываются</h3>
+          <p>Банки, Озон, Wildberries и MAX блокируют доступ при включённом VPN. Каждый раз — танцы с бубном.</p>
+        </div>
+        <div class="pain">
+          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-signal"/></svg></div>
+          <h3>Глушат LTE — ничего не открывается</h3>
+          <p>Мобильный интернет режут так, что сайты не загружаются и сообщения не уходят.</p>
+        </div>
+        <div class="pain">
+          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-refresh"/></svg></div>
+          <h3>Постоянно включай-выключай</h3>
+          <p>Зашёл в банк — выключил VPN. Открыл YouTube — включил. Каждые 15 минут одно и то же.</p>
+        </div>
+        <div class="pain">
+          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-ban"/></svg></div>
+          <h3>YouTube тормозит и в рекламе</h3>
+          <p>Видео грузится по полчаса, реклама на каждом шагу. Даже с VPN — реклама всё равно есть.</p>
+        </div>
+        <div class="pain">
+          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-skull"/></svg></div>
+          <h3>Бесплатные VPN мертвы</h3>
+          <p>РКН блокирует по 5 сервисов в неделю. Любимый вчера VPN сегодня — труп. Снова искать.</p>
+        </div>
+        <div class="pain">
+          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-battery-low"/></svg></div>
+          <h3>Жрёт батарею и трафик</h3>
+          <p>Телефон садится к обеду, лимит трафика горит за неделю. VPN не должен так делать.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       3 KILLER FEATURES — main differentiators
+       ========================================================== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section__head">
+        <div class="eyebrow">Решение</div>
+        <h2 class="section__title">3 причины, почему <span class="text-gradient">россияне выбирают LOBSTER</span></h2>
+        <p class="section__lead">Не «ещё один VPN». А VPN, построенный под реальность Рунета 2026 — со всеми его блокировками, глушением и ограничениями.</p>
+      </div>
+
+      <div class="killer">
+        <article class="killer__card">
+          <div class="killer__num">01</div>
+          <div class="killer__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></div>
+          <h3>Российские приложения и нейросети — работают</h3>
+          <p>Сбер, Т-Банк, Альфа, Озон, Wildberries и MAX открываются с <strong>включённым VPN</strong>. ChatGPT, Claude, Gemini и Perplexity — тоже. Всё одновременно, без отключений и переключений.</p>
+          <div class="killer__chips">
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/sber.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/tinkoff.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/alfa.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/sergey-tkach/top-russian-banks-icons/master/svg-minified/vtb.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-ozon"/></svg></span>
+            <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-wb"/></svg></span>
+            <span><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-max"/></svg></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/telegram/default.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/yandex/default.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/openai/default.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/claude/default.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/gemini/default.svg" alt="" loading="lazy" decoding="async"></span>
+            <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/perplexity/default.svg" alt="" loading="lazy" decoding="async"></span>
+          </div>
+        </article>
+
+        <article class="killer__card killer__card--accent">
+          <div class="killer__num">02</div>
+          <div class="killer__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-ad"/></svg></div>
+          <h3>YouTube без рекламы и тормозов</h3>
+          <p>Никакой буферизации. Никаких пред-роллов. Встроенный AdBlock убирает рекламу прямо в видео — на телефоне, на ноуте, на ТВ. Просто включаете VPN — и YouTube снова такой, каким должен быть.</p>
+        </article>
+
+        <article class="killer__card">
+          <div class="killer__num">03</div>
+          <div class="killer__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></div>
+          <h3>Работает во время глушения интернета</h3>
+          <p>Когда операторы режут мобильный интернет, обычный VPN тоже перестаёт работать. Наши серверы маскируют трафик под обычный HTTPS и обходят DPI-фильтрацию — поэтому сайты, мессенджеры и приложения продолжают открываться <strong>даже во время блокировок и шатдаунов</strong>.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       FULL FEATURES grid
+       ========================================================== -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section__head">
+        <div class="eyebrow">Возможности</div>
+        <h2 class="section__title">И ещё <span class="text-gradient">много мелочей</span>, которых нет у других</h2>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <div class="feature__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-target"/></svg></div>
+          <h3 class="feature__title">Включил и забыл</h3>
+          <p class="feature__text">Не нужно дёргать тумблер 50 раз в день. Один раз включили — всё работает одновременно.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div>
+          <h3 class="feature__title">Высокая скорость</h3>
+          <p class="feature__text">WireGuard и VLESS-Reality. 4K без буферизации, голосовые мгновенные, игры идут плавно.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></div>
+          <h3 class="feature__title">Не блокируется РКН</h3>
+          <p class="feature__text">Маскировка под TLS, ротация IP, новые протоколы. Когда блокируют конкурентов — мы работаем.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-lock"/></svg></div>
+          <h3 class="feature__title">Zero-Logs</h3>
+          <p class="feature__text">RAM-only серверы. Никаких журналов. Подтверждено независимым аудитом 2025 года.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-battery-full"/></svg></div>
+          <h3 class="feature__title">Бережёт батарею</h3>
+          <p class="feature__text">Оптимизация под Android и iOS: минимум фоновой активности, smart-reconnect.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-phone"/></svg></div>
+          <h3 class="feature__title">5 устройств</h3>
+          <p class="feature__text">Один аккаунт — телефон, ноутбук, планшет, роутер и ТВ. Хватит на всю семью.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-globe"/></svg></div>
+          <h3 class="feature__title">Сервера по всему миру</h3>
+          <p class="feature__text">США, Европа, Азия, Турция, ОАЭ. Плюс российские серверы для банков и Госуслуг.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-headset"/></svg></div>
+          <h3 class="feature__title">Поддержка 24/7 на русском</h3>
+          <p class="feature__text">Живые люди в Telegram. Среднее время ответа — 90 секунд. Никаких ботов из Индии.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       Comparison
+       ========================================================== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__head">
+        <div class="eyebrow">Сравнение</div>
+        <h2 class="section__title">LOBSTER VPN vs <span class="text-muted">«остальные»</span></h2>
+      </div>
+      <div class="compare">
+        <div class="compare__row compare__row--head">
+          <div></div>
+          <div class="compare__col compare__col--us"><span class="compare__lobster">🦞</span> LOBSTER VPN</div>
+          <div class="compare__col">Другие VPN</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Открываются Сбер, Озон, WB, MAX</div>
+          <div class="compare__col compare__col--us"><span class="check"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></div>
+          <div class="compare__col"><span class="cross"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg></span></div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">YouTube без рекламы и замедления</div>
+          <div class="compare__col compare__col--us"><span class="check"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></div>
+          <div class="compare__col"><span class="cross"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg></span></div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Работает во время глушения LTE</div>
+          <div class="compare__col compare__col--us"><span class="check"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></div>
+          <div class="compare__col"><span class="cross"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg></span></div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Не нужно отключать для банка</div>
+          <div class="compare__col compare__col--us"><span class="check"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></div>
+          <div class="compare__col"><span class="cross"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg></span></div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Высокая скорость без замедления</div>
+          <div class="compare__col compare__col--us"><span class="check"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></div>
+          <div class="compare__col"><span class="cross"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg></span></div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Не блокируется РКН</div>
+          <div class="compare__col compare__col--us"><span class="check"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></div>
+          <div class="compare__col"><span class="cross"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg></span></div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Поддержка 24/7 на русском</div>
+          <div class="compare__col compare__col--us"><span class="check"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></div>
+          <div class="compare__col"><span class="cross"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg></span></div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__label">Оплата картой РФ и СБП</div>
+          <div class="compare__col compare__col--us"><span class="check"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></div>
+          <div class="compare__col"><span class="cross"><svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       AUTHORITY / TRUST
+       ========================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div class="eyebrow">Почему нам можно доверять</div>
+        <h2 class="section__title">Сделано в России. <span class="text-gradient">Под реальность Рунета.</span></h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-block">
+          <div class="trust-block__num">3 года</div>
+          <div class="trust-block__label">на рынке без перерывов работы</div>
+        </div>
+        <div class="trust-block">
+          <div class="trust-block__num">180k+</div>
+          <div class="trust-block__label">платящих клиентов в РФ и СНГ</div>
+        </div>
+        <div class="trust-block">
+          <div class="trust-block__num">99.98%</div>
+          <div class="trust-block__label">аптайм за 12 месяцев</div>
+        </div>
+        <div class="trust-block">
+          <div class="trust-block__num">12 400+</div>
+          <div class="trust-block__label">отзывов 4–5 звёзд</div>
+        </div>
+        <div class="trust-block">
+          <div class="trust-block__num">90<small>сек</small></div>
+          <div class="trust-block__label">среднее время ответа поддержки</div>
+        </div>
+        <div class="trust-block">
+          <div class="trust-block__num">2025</div>
+          <div class="trust-block__label">независимый аудит no-logs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       PRICING — anchor + risk reversal
+       ========================================================== -->
+  <section class="section section--dark" id="pricing">
+    <div class="container">
+      <div class="section__head">
+        <div class="eyebrow">Тарифы</div>
+        <h2 class="section__title">Дешевле чашки кофе. <span class="text-gradient">Дороже не нужно.</span></h2>
+        <p class="section__lead">1 день бесплатно без карты. Оплата картой РФ, СБП, ЮMoney, крипта.</p>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <div class="plan__head">
+            <h3 class="plan__name">Месяц</h3>
+            <p class="plan__sub">Попробовать без обязательств</p>
+          </div>
+          <div class="plan__price">
+            <span class="plan__amount">299₽</span>
+            <span class="plan__period">/ мес</span>
+          </div>
+          <ul class="plan__features">
+            <li>Все локации и Антиглушилки LTE</li>
+            <li>YouTube без рекламы</li>
+            <li>5 устройств одновременно</li>
+            <li>Без ограничений скорости</li>
+            <li>Поддержка 24/7</li>
+          </ul>
+          <a href="#" class="btn btn--ghost btn--block">Выбрать «Месяц»</a>
+        </article>
+
+        <article class="plan plan--featured">
+          <div class="plan__badge"><svg class="ic" viewBox="0 0 24 24"><use href="#i-fire"/></svg> Самый популярный</div>
+          <div class="plan__head">
+            <h3 class="plan__name">Год</h3>
+            <p class="plan__sub">Самый популярный · 8 из 10 выбирают</p>
+          </div>
+          <div class="plan__price">
+            <span class="plan__old">299₽</span>
+            <span class="plan__amount">99₽</span>
+            <span class="plan__period">/ мес</span>
+          </div>
+          <div class="plan__total">1 188₽ один раз в год · меньше чем 1 поездка на такси в месяц</div>
+          <ul class="plan__features">
+            <li>Всё из тарифа «Месяц»</li>
+            <li><strong>+ 2 месяца в подарок</strong></li>
+            <li><strong>+ Premium-сервера</strong></li>
+            <li><strong>+ Приоритет поддержки</strong></li>
+            <li><strong>+ Раннее тестирование функций</strong></li>
+          </ul>
+          <a href="#" class="btn btn--primary btn--block">Подключить год за 1 188₽</a>
+        </article>
+
+        <article class="plan">
+          <div class="plan__head">
+            <h3 class="plan__name">2 года</h3>
+            <p class="plan__sub">Максимум выгоды</p>
+          </div>
+          <div class="plan__price">
+            <span class="plan__old">299₽</span>
+            <span class="plan__amount">69₽</span>
+            <span class="plan__period">/ мес</span>
+          </div>
+          <div class="plan__total">1 656₽ за 2 года · экономия 5 520₽</div>
+          <ul class="plan__features">
+            <li>Всё из тарифа «Год»</li>
+            <li><strong>+ 4 месяца в подарок</strong></li>
+            <li><strong>+ 10 устройств</strong></li>
+            <li><strong>+ Выделенный IP по запросу</strong></li>
+          </ul>
+          <a href="#" class="btn btn--ghost btn--block">Выбрать «2 года»</a>
+        </article>
+      </div>
+
+      <div class="guarantees">
+        <div class="guarantee"><span class="guarantee__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-gift"/></svg></span><div><strong>1 день бесплатно</strong><small>без привязки карты</small></div></div>
+        <div class="guarantee"><span class="guarantee__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-card"/></svg></span><div><strong>Карты РФ и СБП</strong><small>оплата как в любом магазине</small></div></div>
+        <div class="guarantee"><span class="guarantee__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield-check"/></svg></span><div><strong>Анонимная оплата</strong><small>криптой, если хочется</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       Testimonials — case-study angle
+       ========================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div class="eyebrow">Отзывы</div>
+        <h2 class="section__title">Люди, которые <span class="text-gradient">больше не дёргают тумблер</span></h2>
+      </div>
+      <div class="reviews">
+        <article class="review">
+          <div class="review__stars"><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg></div>
+          <p>«Раньше выключал VPN, чтобы зайти в Сбер. Потом включал, чтобы посмотреть YouTube. На LOBSTER просто включил один раз — и всё работает. Это какое-то колдунство.»</p>
+          <div class="review__author">
+            <div class="review__avatar" style="background:linear-gradient(135deg,#ff6b4a,#ff3d2e)">А</div>
+            <div><strong>Алексей Маслов</strong><small>Москва · 8 месяцев с нами</small></div>
+          </div>
+        </article>
+        <article class="review">
+          <div class="review__stars"><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg></div>
+          <p>«У нас в области интернет режут регулярно. Раньше я просто сидел без связи. С LOBSTER во время глушения сайты открываются, голосовые уходят, YouTube идёт без рекламы. Просто работает.»</p>
+          <div class="review__author">
+            <div class="review__avatar" style="background:linear-gradient(135deg,#ff8a65,#ff5722)">М</div>
+            <div><strong>Марина Куликова</strong><small>Краснодар · 1 год с нами</small></div>
+          </div>
+        </article>
+        <article class="review">
+          <div class="review__stars"><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg><svg class="ic" viewBox="0 0 24 24"><use href="#i-star"/></svg></div>
+          <p>«Озон, Wildberries, MAX и Кинопоиск работают с включённым VPN. Я даже сначала не поверил — пять раз перезаходил. Из всех VPN, что пробовал, только LOBSTER не ломает половину телефона.»</p>
+          <div class="review__author">
+            <div class="review__avatar" style="background:linear-gradient(135deg,#ffb37a,#ff8a65)">Д</div>
+            <div><strong>Дмитрий Воронов</strong><small>СПб · 3 месяца с нами</small></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       FAQ — objection handling
+       ========================================================== -->
+  <section class="section section--dark" id="faq">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="section__title">Частые <span class="text-gradient">вопросы</span></h2>
+      </div>
+      <div class="faq">
+        <details class="faq__item" open>
+          <summary>Почему у вас работают Сбер, Озон, Wildberries и MAX, а у других VPN — нет?</summary>
+          <p>Большинство VPN направляют весь трафик через зарубежные серверы — российские сервисы видят это и блокируют. У нас умный split-tunnel: трафик к российским сервисам идёт напрямую, к остальному — через защищённый канал. Сбер видит вас как обычного пользователя, YouTube — как пользователя из любой нужной страны.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Как у вас YouTube работает без рекламы?</summary>
+          <p>Внутри LOBSTER VPN встроен AdBlock на уровне DNS. Он отсекает все рекламные домены до того, как они попадут в видео. Работает на всех устройствах — телефон, ноут, ТВ — без установки расширений. Просто включаете VPN — и YouTube чист.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Как у вас работает интернет во время глушения мобильной сети?</summary>
+          <p>Когда операторы режут мобильный интернет, обычный VPN тоже перестаёт работать — нечего «защищать». Наши серверы маскируют трафик под обычный HTTPS и обходят DPI-фильтрацию и QoS-шейпинг. Полную скорость канал не отдаёт, но сайты, мессенджеры и приложения продолжают открываться даже во время блокировок.</p>
+        </details>
+        <details class="faq__item">
+          <summary>VPN законен в России?</summary>
+          <p>Да. Использование VPN в личных целях не запрещено и не наказывается. Запрещено использовать VPN для доступа к экстремистским материалам — мы такое не поддерживаем. LOBSTER VPN — для свободного и безопасного интернета.</p>
+        </details>
+        <details class="faq__item">
+          <summary>А вы точно не пишете логи?</summary>
+          <p>Точно. Архитектура построена на RAM-only серверах: при перезагрузке всё стирается физически. Подтверждено независимым аудитом в 2025 году. Платёжные данные хранятся отдельно от трафика и не связаны с активностью.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Что если VPN перестанет работать после новой блокировки?</summary>
+          <p>Мы постоянно обновляем протоколы и инфраструктуру: VLESS-Reality, маскировка под TLS, ротация IP-пулов. За 2 года — ни одной длительной недоступности. А если что — поддержка 24/7 переключит вас на резервный канал за минуты.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Как оплатить из России?</summary>
+          <p>Картой любого российского банка, СБП, ЮMoney, СберPay, Tinkoff Pay, криптой (BTC, USDT, TON). Без зарубежных карт и танцев с бубном.</p>
+        </details>
+        <details class="faq__item">
+          <summary>На скольких устройствах работает один аккаунт?</summary>
+          <p>На 5 одновременно (на тарифе «2 года» — 10). Можно поставить на телефон, ноутбук, планшет, ТВ-приставку и роутер — и пользоваться всей семьёй.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       FINAL CTA
+       ========================================================== -->
+  <section class="section cta">
+    <div class="container">
+      <div class="cta__inner">
+        <div class="cta__lobster" aria-hidden="true">🦞</div>
+        <h2 class="cta__title">Подключите свободный интернет<br/><span class="text-gradient">за 60 секунд.</span></h2>
+        <p class="cta__text">1 день бесплатно. Без привязки карты. Сбер, Озон, MAX и YouTube без рекламы — на одном VPN.</p>
+        <a href="#pricing" class="btn btn--primary btn--lg">
+          Попробовать бесплатно
+          <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow-right"/></svg>
+        </a>
+        <div class="cta__sub">
+          Рейтинг 4.87 на основе 12 400 отзывов · 180 000 клиентов
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       Footer
+       ========================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="logo">
+            <span class="logo__icon">🦞</span>
+            <span class="logo__text">LOBSTER<span class="logo__accent"> VPN</span></span>
+          </a>
+          <p>VPN, который работает даже когда глушат интернет. Сделано в России для тех, кому нужно, чтобы интернет просто работал.</p>
+        </div>
+        <div>
+          <h4>Продукт</h4>
+          <a href="#features">Возможности</a>
+          <a href="#pricing">Тарифы</a>
+          <a href="#">Скачать приложение</a>
+        </div>
+        <div>
+          <h4>Поддержка</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#">Чат 24/7</a>
+          <a href="mailto:hi@lobstervpn.ru">hi@lobstervpn.ru</a>
+          <a href="#">Telegram-канал</a>
+        </div>
+        <div>
+          <h4>Юридическое</h4>
+          <a href="#">Договор оферты</a>
+          <a href="#">Политика приватности</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 LOBSTER VPN. Все права защищены.</span>
+        <span>Сделано с 🦞 в России</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+       LOGIN MODAL
+       ========================================================== -->
+  <div class="modal" id="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-title">
+    <div class="modal__backdrop" data-close-login></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" data-close-login aria-label="Закрыть">
+        <svg class="ic" viewBox="0 0 24 24"><use href="#i-x"/></svg>
+      </button>
+      <div class="modal__head">
+        <div class="modal__lobster" aria-hidden="true">🦞</div>
+        <h2 id="login-title" class="modal__title">Войти в LOBSTER VPN</h2>
+        <p class="modal__sub">Один аккаунт — все ваши устройства</p>
+      </div>
+
+      <div class="modal__methods">
+        <a href="tel:" class="btn btn--primary btn--block btn--lg">
+          <svg class="ic" viewBox="0 0 24 24"><use href="#i-phone"/></svg>
+          По номеру телефона
+        </a>
+        <div class="modal__divider"><span>или</span></div>
+        <a href="https://t.me/lobster_vpn_bot?start=login" target="_blank" rel="noopener" class="btn btn--tg btn--block btn--lg">
+          <img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/telegram/default.svg" alt="" loading="lazy" decoding="async">
+          Войти через Telegram
+        </a>
+      </div>
+
+      <p class="modal__legal">Если аккаунта ещё нет — он создастся автоматически при первом входе. Входя, вы соглашаетесь с <a href="#">Договором оферты</a> и <a href="#">Политикой приватности</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=20" defer></script>
+</body>
+</html>
