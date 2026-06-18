@@ -467,11 +467,14 @@ p { margin: 0 0 1em; }
 @media (max-width: 720px) {
   .hero-mascot {
     float: right;
-    width: 150px;
-    margin: 0 -6px 6px 14px;
+    width: 188px;
+    margin: 0 -10px 4px 12px;
     shape-outside: margin-box;
   }
-  .hero-mascot__fallback { font-size: 108px; }
+  .hero-mascot__fallback { font-size: 130px; }
+}
+@media (max-width: 380px) {
+  .hero-mascot { width: 150px; }
 }
 
 /* Desktop: mascot sits in the right column over the iPhone area as an
@@ -1553,10 +1556,10 @@ p { margin: 0 0 1em; }
   .trust-item strong { font-size: 22px; }
   .trust-item span { font-size: 12px; }
 
-  .phone { width: 260px; height: auto; }
-  .hero__floating { font-size: 12px; padding: 8px 12px; }
-  .hero__floating--1 { left: -8px; }
-  .hero__floating--2 { right: -8px; }
+  .phone { width: 270px; height: auto; }
+  /* Floating notification cards overlap the phone on narrow screens — hide them */
+  .hero__floating { display: none; }
+  .hero__visual { min-height: auto; margin-top: 4px; }
 
   .marquee__track span { font-size: 13px; }
   .marquee__track { gap: 24px; }
@@ -1790,14 +1793,10 @@ p { margin: 0 0 1em; }
   pointer-events: none;
 }
 .killer__card--accent {
-  background: linear-gradient(160deg, var(--ink-950) 0%, #0B1838 100%);
-  color: white;
-  border-color: rgba(91, 123, 255, 0.3);
-  box-shadow: 0 30px 80px -30px rgba(30, 64, 229, 0.4);
+  background: var(--bg-card);
+  border-color: rgba(30, 64, 229, 0.35);
+  box-shadow: 0 24px 60px -28px rgba(30, 64, 229, 0.32);
 }
-.killer__card--accent .killer__icon { color: var(--shkiper-300); background: rgba(91, 123, 255, 0.12); }
-.killer__card--accent p { color: var(--text-on-dark-soft); }
-.killer__card--accent strong, .killer__card--accent h3 { color: white; }
 
 .killer__num {
   font-family: 'Unbounded', sans-serif;
@@ -1807,7 +1806,6 @@ p { margin: 0 0 1em; }
   color: var(--shkiper-600);
   margin-bottom: 12px;
 }
-.killer__card--accent .killer__num { color: var(--shkiper-300); }
 .killer__icon {
   width: 64px; height: 64px;
   border-radius: 18px;
@@ -1872,12 +1870,6 @@ p { margin: 0 0 1em; }
   color: var(--shkiper-600);
   white-space: nowrap;
 }
-.killer__card--accent .killer__tag {
-  background: rgba(91, 123, 255, 0.14);
-  border-color: rgba(91, 123, 255, 0.32);
-  color: var(--shkiper-300);
-}
-
 .killer__metric {
   display: flex;
   gap: 18px;
