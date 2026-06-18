@@ -2813,3 +2813,35 @@ h1, h2, h3, p { overflow-wrap: anywhere; word-break: break-word; }
 
 /* Opaque logo pill */
 .logo--pill { background: #0E0F17; }
+
+/* ==========================================================
+   Hero fits one screen (100svh), compact composition
+   ========================================================== */
+.hero__inner {
+  min-height: 100svh;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 88px;
+  padding-bottom: 32px;
+}
+.hero__kicker { font-size: 12px; padding: 9px 18px; }
+.hero__title { font-size: clamp(28px, 3.2vw, 44px); max-width: 900px; margin: 0; line-height: 1.06; }
+.hero__subtitle { font-size: clamp(15px, 1.25vw, 17px); margin: 0; line-height: 1.5; }
+.hero__showcase { gap: 16px; margin-top: 2px; }
+.hero__showcase .hero-mascot { width: 270px; max-width: 24vw; }
+.hero-card { padding: 13px 14px; gap: 11px; }
+.hero-card strong { font-size: 14.5px; }
+.hero-card small { font-size: 12px; line-height: 1.35; }
+.hero-card__ic { width: 36px; height: 36px; }
+.hero__cta-wrap { gap: 10px; }
+.hero__risk-line { margin: 0; font-size: 13px; }
+
+/* Mobile: keep it tight; penguin smaller, cards compact */
+@media (max-width: 900px) {
+  .hero__inner { min-height: 100svh; gap: 14px; padding-top: 84px; padding-bottom: 28px; }
+  .hero__showcase .hero-mascot { width: 200px; max-width: 56%; }
+  .hero-card { padding: 12px; }
+}
+@media (max-width: 480px) {
+  .hero__showcase .hero-mascot { width: 175px; max-width: 60%; }
+}
