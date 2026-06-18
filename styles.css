@@ -1556,7 +1556,9 @@ p { margin: 0 0 1em; }
   .trust-item strong { font-size: 22px; }
   .trust-item span { font-size: 12px; }
 
-  .phone { width: 270px; height: auto; }
+  /* Keep the phone perfectly upright on mobile so the screenshot sits
+     straight inside the frame (no -2deg float tilt). */
+  .phone { width: 270px; height: auto; animation: none; transform: none; }
   /* Floating notification cards overlap the phone on narrow screens — hide them */
   .hero__floating { display: none; }
   .hero__visual { min-height: auto; margin-top: 4px; }
