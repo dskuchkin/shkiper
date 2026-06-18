@@ -467,27 +467,39 @@ p { margin: 0 0 1em; }
 @media (max-width: 720px) {
   .hero-mascot {
     float: right;
-    width: 188px;
-    margin: 0 -10px 4px 12px;
+    width: 210px;
+    margin: 0 -12px 2px 14px;
     shape-outside: margin-box;
   }
-  .hero-mascot__fallback { font-size: 130px; }
+  .hero-mascot__img {
+    filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 40px rgba(30, 64, 229, 0.25));
+  }
+  .hero-mascot__fallback { font-size: 150px; }
 }
 @media (max-width: 380px) {
-  .hero-mascot { width: 150px; }
+  .hero-mascot { width: 170px; }
 }
 
-/* Desktop: mascot sits in the right column over the iPhone area as an
-   asymmetric anchor, not as an inline element above the H1. */
+/* Desktop: big mascot as the right-column hero star, layered in front of
+   the phone for an asymmetric, characterful composition. */
 @media (min-width: 1025px) {
   .hero-mascot {
     position: absolute;
-    width: 260px;
-    top: 64px;
-    right: 12%;
+    width: 380px;
+    right: -3%;
+    bottom: -10px;
+    top: auto;
     margin: 0;
-    z-index: 3;
+    z-index: 4;
   }
+  .hero-mascot__img {
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 60px rgba(30, 64, 229, 0.25));
+  }
+  /* Keep the phone where it is; the big penguin stands in front of it */
+  .hero__visual .phone { width: 290px; }
+}
+@media (min-width: 1240px) {
+  .hero-mascot { width: 420px; right: -5%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
