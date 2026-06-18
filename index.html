@@ -11,13 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=35" />
+  <link rel="stylesheet" href="styles.css?v=36" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🐧</text></svg>" />
 </head>
 <body>
-
-  <!-- Fine grain texture overlay for depth -->
-  <div class="grain" aria-hidden="true"></div>
 
   <!-- ==========================================================
        SVG icon sprite — UI icons + brand-styled icons
@@ -201,13 +198,11 @@
        ========================================================== -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#" class="logo" aria-label="SHKIPER VPN">
+      <button class="btn btn--primary btn--sm header__connect" data-open-login type="button">Подключить VPN</button>
+      <a href="#" class="logo logo--pill" aria-label="SHKIPER VPN">
         <span class="logo__icon" aria-hidden="true">🐧</span>
         <span class="logo__text">SHKIPER<span class="logo__accent"> VPN</span></span>
       </a>
-      <div class="header__actions">
-        <button class="btn btn--login btn--sm" data-open-login type="button">Войти</button>
-      </div>
     </div>
   </header>
 
@@ -223,17 +218,6 @@
     </div>
     <div class="container hero__inner">
       <div class="hero__content">
-        <!-- Маскот SHKIPER VPN (положите свою картинку в media/shkiper.png) -->
-        <figure class="hero-mascot" aria-hidden="true">
-          <img class="hero-mascot__img"
-               src="media/shkiper.png"
-               alt="Маскот SHKIPER VPN"
-               loading="eager"
-               decoding="async"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="hero-mascot__fallback">🐧</div>
-        </figure>
-
         <div class="hero__eyebrow">Антиглушилки · YouTube · Нейросети · Российские сервисы</div>
         <h1 class="hero__title">
           YouTube без рекламы, нейросети и банки —<br/>
@@ -285,18 +269,17 @@
         <p class="hero__risk-line">Без карты. Подключение за 2 минуты. Работает на телефоне, компьютере и ТВ.</p>
       </div>
 
-      <!-- Hero visual: iPhone 17 Pro Max mockup -->
-      <div class="hero__visual" aria-hidden="true">
-        <div class="phone phone--ip17">
-          <div class="phone__screen">
-            <img class="phone__screen-img"
-                 src="media/iphone-screen.png"
-                 alt="Скриншот приложения SHKIPER VPN"
-                 loading="lazy"
-                 decoding="async">
-          </div>
-          <div class="phone__bezel" aria-hidden="true"></div>
-        </div>
+      <!-- Hero visual: big SHKIPER penguin mascot -->
+      <div class="hero__visual hero__visual--mascot" aria-hidden="true">
+        <figure class="hero-mascot">
+          <img class="hero-mascot__img"
+               src="media/shkiper.png"
+               alt="Маскот SHKIPER VPN"
+               loading="eager"
+               decoding="async"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="hero-mascot__fallback">🐧</div>
+        </figure>
         <div class="hero__floating hero__floating--1">
           <span class="hero__floating-ic ok"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
           <div>
@@ -774,9 +757,8 @@
        FINAL CTA
        ========================================================== -->
   <section class="section cta">
-    <div class="container">
-      <div class="cta__inner">
-        <div class="cta__shkiper" aria-hidden="true">🐧</div>
+    <div class="container cta__grid">
+      <div class="cta__copy">
         <h2 class="cta__title">VPN без ручного <span class="text-gradient">переключения туда-сюда</span></h2>
         <p class="cta__text">Один VPN с отдельными серверами под YouTube, нейросети, банки и маркетплейсы — и резервом на случай ограничений.</p>
         <a href="#pricing" class="btn btn--primary btn--lg">
@@ -784,6 +766,18 @@
           <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow-right"/></svg>
         </a>
         <div class="cta__sub">Без карты. Подключение за 2 минуты. Работает на телефоне, компьютере и ТВ.</div>
+      </div>
+      <div class="cta__visual" aria-hidden="true">
+        <div class="phone phone--ip17">
+          <div class="phone__screen">
+            <img class="phone__screen-img"
+                 src="media/iphone-screen.png"
+                 alt="Скриншот приложения SHKIPER VPN"
+                 loading="lazy"
+                 decoding="async">
+          </div>
+          <div class="phone__bezel" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
   </section>
