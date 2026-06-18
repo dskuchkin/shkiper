@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=37" />
+  <link rel="stylesheet" href="styles.css?v=38" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🐧</text></svg>" />
 </head>
 <body>
@@ -217,19 +217,20 @@
       <div class="hero__grid"></div>
     </div>
     <div class="container hero__inner">
-      <div class="hero__content">
-        <div class="hero__eyebrow">Антиглушилки · YouTube · Нейросети · Российские сервисы</div>
-        <h1 class="hero__title">
-          YouTube без рекламы, нейросети и банки —<br/>
-          <span class="text-gradient">на одном VPN.</span>
-        </h1>
-        <p class="hero__subtitle">
-          Свой сервер под каждую задачу. Без ручных переключений туда-сюда.
-        </p>
+      <div class="hero__kicker">
+        <svg class="ic" viewBox="0 0 24 24"><use href="#i-sparkles"/></svg>
+        VPN нового поколения
+      </div>
+      <h1 class="hero__title">
+        YouTube без рекламы, нейросети и банки —<br/>
+        <span class="text-gradient">на одном VPN.</span>
+      </h1>
+      <p class="hero__subtitle">
+        Свой сервер под каждую задачу. Без ручных переключений туда-сюда.
+      </p>
 
-        <div class="hero__highlight">Один VPN — разные маршруты под разные задачи.</div>
-
-        <div class="hero__cards">
+      <div class="hero__showcase">
+        <div class="hero__side">
           <div class="hero-card">
             <span class="hero-card__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></span>
             <div>
@@ -244,6 +245,19 @@
               <small>Без рекламы и тормозов.</small>
             </div>
           </div>
+        </div>
+
+        <figure class="hero-mascot" aria-hidden="true">
+          <img class="hero-mascot__img"
+               src="media/shkiper.png"
+               alt="Маскот SHKIPER VPN"
+               loading="eager"
+               decoding="async"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="hero-mascot__fallback">🐧</div>
+        </figure>
+
+        <div class="hero__side">
           <div class="hero-card">
             <span class="hero-card__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-sparkles"/></svg></span>
             <div>
@@ -257,40 +271,6 @@
               <strong>Российские сервисы</strong>
               <small>Сбер, Озон, MAX, Госуслуги.</small>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hero visual: big SHKIPER penguin mascot -->
-      <div class="hero__visual hero__visual--mascot" aria-hidden="true">
-        <figure class="hero-mascot">
-          <img class="hero-mascot__img"
-               src="media/shkiper.png"
-               alt="Маскот SHKIPER VPN"
-               loading="eager"
-               decoding="async"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="hero-mascot__fallback">🐧</div>
-        </figure>
-        <div class="hero__floating hero__floating--1">
-          <span class="hero__floating-ic ok"><svg class="ic" viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
-          <div>
-            <strong>Озон открылся</strong>
-            <small>с включённым VPN</small>
-          </div>
-        </div>
-        <div class="hero__floating hero__floating--2">
-          <span class="hero__floating-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-ad"/></svg></span>
-          <div>
-            <strong>YouTube без рекламы</strong>
-            <small>и без замедления</small>
-          </div>
-        </div>
-        <div class="hero__floating hero__floating--3">
-          <span class="hero__floating-ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></span>
-          <div>
-            <strong>LTE стабильно</strong>
-            <small>обход глушения</small>
           </div>
         </div>
       </div>
