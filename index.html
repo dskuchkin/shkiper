@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=36" />
+  <link rel="stylesheet" href="styles.css?v=37" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🐧</text></svg>" />
 </head>
 <body>
@@ -198,11 +198,11 @@
        ========================================================== -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <button class="btn btn--primary btn--sm header__connect" data-open-login type="button">Подключить VPN</button>
       <a href="#" class="logo logo--pill" aria-label="SHKIPER VPN">
         <span class="logo__icon" aria-hidden="true">🐧</span>
         <span class="logo__text">SHKIPER<span class="logo__accent"> VPN</span></span>
       </a>
+      <button class="btn btn--primary btn--sm header__connect" data-open-login type="button">Подключить VPN</button>
     </div>
   </header>
 
@@ -259,14 +259,6 @@
             </div>
           </div>
         </div>
-
-        <div class="hero__cta">
-          <button class="btn btn--primary btn--lg" data-open-login type="button">
-            Попробовать 1 день бесплатно
-            <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow-right"/></svg>
-          </button>
-        </div>
-        <p class="hero__risk-line">Без карты. Подключение за 2 минуты. Работает на телефоне, компьютере и ТВ.</p>
       </div>
 
       <!-- Hero visual: big SHKIPER penguin mascot -->
@@ -301,6 +293,16 @@
             <small>обход глушения</small>
           </div>
         </div>
+      </div>
+
+      <div class="hero__cta-wrap">
+        <div class="hero__cta">
+          <button class="btn btn--primary btn--lg" data-open-login type="button">
+            Попробовать 1 день бесплатно
+            <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow-right"/></svg>
+          </button>
+        </div>
+        <p class="hero__risk-line">Без карты. Подключение за 2 минуты. Работает на телефоне, компьютере и ТВ.</p>
       </div>
     </div>
 
@@ -350,6 +352,93 @@
         <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/claude/default.svg" alt="" loading="eager" decoding="async"> Claude</span>
         <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/gemini/default.svg" alt="" loading="eager" decoding="async"> Gemini</span>
         <span><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/perplexity/default.svg" alt="" loading="eager" decoding="async"> Perplexity</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       MODES — server modes per task
+       ========================================================== -->
+  <section class="section section--dark" id="features">
+    <div class="container">
+      <div class="section__head">
+        <div class="eyebrow">Режимы</div>
+        <h2 class="section__title">Выбирайте <span class="text-gradient">режим под задачу</span></h2>
+        <p class="section__lead">Не один сервер на всё — отдельное направление под каждую задачу.</p>
+      </div>
+      <div class="modes-layout">
+      <div class="modes-phone" aria-hidden="true">
+        <div class="phone phone--ip17">
+          <div class="phone__screen">
+            <img class="phone__screen-img" src="media/iphone-screen.png" alt="Скриншот приложения SHKIPER VPN" loading="lazy" decoding="async">
+          </div>
+          <div class="phone__bezel" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="modes">
+        <article class="mode">
+          <div class="mode__head">
+            <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-ad"/></svg></span>
+            <h3>YouTube без рекламы</h3>
+          </div>
+          <p>Меньше рекламы, стабильная загрузка, без зависаний.</p>
+          <div class="mode__label">Подходит для:</div>
+          <div class="mode__pills">
+            <span class="mode__pill">YouTube на телефоне</span>
+            <span class="mode__pill">на компьютере</span>
+            <span class="mode__pill">на ТВ</span>
+            <span class="mode__pill">долгого просмотра</span>
+          </div>
+        </article>
+        <article class="mode">
+          <div class="mode__head">
+            <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></span>
+            <h3>Антиглушилки</h3>
+          </div>
+          <p>Работают, когда сеть режут и оставляют белые списки.</p>
+          <div class="mode__label">Подходит для:</div>
+          <div class="mode__pills">
+            <span class="mode__pill">нестабильного мобильного интернета</span>
+            <span class="mode__pill">ограничений сети</span>
+            <span class="mode__pill">белых списков</span>
+            <span class="mode__pill">когда обычный VPN не подключается</span>
+          </div>
+        </article>
+        <article class="mode">
+          <div class="mode__head">
+            <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-sparkles"/></svg></span>
+            <h3>Нейросети</h3>
+          </div>
+          <p>Стабильный доступ к ИИ — без зарубежной симки.</p>
+          <div class="mode__label">Работают:</div>
+          <div class="mode__pills mode__pills--brand">
+            <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/openai/default.svg" alt="" loading="lazy" decoding="async"> ChatGPT</span>
+            <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/claude/default.svg" alt="" loading="lazy" decoding="async"> Claude</span>
+            <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/gemini/default.svg" alt="" loading="lazy" decoding="async"> Gemini</span>
+            <span class="mode__pill">Grok</span>
+            <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/perplexity/default.svg" alt="" loading="lazy" decoding="async"> Perplexity</span>
+          </div>
+        </article>
+        <article class="mode">
+          <div class="mode__head">
+            <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span>
+            <h3>Российские приложения</h3>
+          </div>
+          <p>Банки и маркетплейсы открываются без ошибок.</p>
+          <div class="mode__label">Работают:</div>
+          <div class="mode__pills mode__pills--brand">
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-sber"/></svg> Сбер</span>
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-tbank"/></svg> Т-Банк</span>
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-alfa"/></svg> Альфа-Банк</span>
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-vtb"/></svg> ВТБ</span>
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-ozon"/></svg> Озон</span>
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-wb"/></svg> Wildberries</span>
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-max"/></svg> MAX</span>
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-gosuslugi"/></svg> Госуслуги</span>
+            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-yandex"/></svg> Яндекс</span>
+          </div>
+        </article>
+      </div>
       </div>
     </div>
   </section>
@@ -424,82 +513,6 @@
     </div>
   </section>
 
-  <!-- ==========================================================
-       MODES — server modes per task
-       ========================================================== -->
-  <section class="section section--dark" id="features">
-    <div class="container">
-      <div class="section__head">
-        <div class="eyebrow">Режимы</div>
-        <h2 class="section__title">Выбирайте <span class="text-gradient">режим под задачу</span></h2>
-        <p class="section__lead">Не один сервер на всё — отдельное направление под каждую задачу.</p>
-      </div>
-      <div class="modes">
-        <article class="mode">
-          <div class="mode__head">
-            <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-ad"/></svg></span>
-            <h3>YouTube без рекламы</h3>
-          </div>
-          <p>Меньше рекламы, стабильная загрузка, без зависаний.</p>
-          <div class="mode__label">Подходит для:</div>
-          <div class="mode__pills">
-            <span class="mode__pill">YouTube на телефоне</span>
-            <span class="mode__pill">на компьютере</span>
-            <span class="mode__pill">на ТВ</span>
-            <span class="mode__pill">долгого просмотра</span>
-          </div>
-        </article>
-        <article class="mode">
-          <div class="mode__head">
-            <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></span>
-            <h3>Антиглушилки</h3>
-          </div>
-          <p>Работают, когда сеть режут и оставляют белые списки.</p>
-          <div class="mode__label">Подходит для:</div>
-          <div class="mode__pills">
-            <span class="mode__pill">нестабильного мобильного интернета</span>
-            <span class="mode__pill">ограничений сети</span>
-            <span class="mode__pill">белых списков</span>
-            <span class="mode__pill">когда обычный VPN не подключается</span>
-          </div>
-        </article>
-        <article class="mode">
-          <div class="mode__head">
-            <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-sparkles"/></svg></span>
-            <h3>Нейросети</h3>
-          </div>
-          <p>Стабильный доступ к ИИ — без зарубежной симки.</p>
-          <div class="mode__label">Работают:</div>
-          <div class="mode__pills mode__pills--brand">
-            <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/openai/default.svg" alt="" loading="lazy" decoding="async"> ChatGPT</span>
-            <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/claude/default.svg" alt="" loading="lazy" decoding="async"> Claude</span>
-            <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/gemini/default.svg" alt="" loading="lazy" decoding="async"> Gemini</span>
-            <span class="mode__pill">Grok</span>
-            <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/perplexity/default.svg" alt="" loading="lazy" decoding="async"> Perplexity</span>
-          </div>
-        </article>
-        <article class="mode">
-          <div class="mode__head">
-            <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span>
-            <h3>Российские приложения</h3>
-          </div>
-          <p>Банки и маркетплейсы открываются без ошибок.</p>
-          <div class="mode__label">Работают:</div>
-          <div class="mode__pills mode__pills--brand">
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-sber"/></svg> Сбер</span>
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-tbank"/></svg> Т-Банк</span>
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-alfa"/></svg> Альфа-Банк</span>
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-vtb"/></svg> ВТБ</span>
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-ozon"/></svg> Озон</span>
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-wb"/></svg> Wildberries</span>
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-max"/></svg> MAX</span>
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-gosuslugi"/></svg> Госуслуги</span>
-            <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-yandex"/></svg> Яндекс</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <!-- ==========================================================
        WHITE LISTS — what happens, honest disclaimer
@@ -757,8 +770,9 @@
        FINAL CTA
        ========================================================== -->
   <section class="section cta">
-    <div class="container cta__grid">
-      <div class="cta__copy">
+    <div class="container">
+      <div class="cta__inner">
+        <div class="cta__shkiper" aria-hidden="true">🐧</div>
         <h2 class="cta__title">VPN без ручного <span class="text-gradient">переключения туда-сюда</span></h2>
         <p class="cta__text">Один VPN с отдельными серверами под YouTube, нейросети, банки и маркетплейсы — и резервом на случай ограничений.</p>
         <a href="#pricing" class="btn btn--primary btn--lg">
@@ -766,18 +780,6 @@
           <svg class="ic" viewBox="0 0 24 24"><use href="#i-arrow-right"/></svg>
         </a>
         <div class="cta__sub">Без карты. Подключение за 2 минуты. Работает на телефоне, компьютере и ТВ.</div>
-      </div>
-      <div class="cta__visual" aria-hidden="true">
-        <div class="phone phone--ip17">
-          <div class="phone__screen">
-            <img class="phone__screen-img"
-                 src="media/iphone-screen.png"
-                 alt="Скриншот приложения SHKIPER VPN"
-                 loading="lazy"
-                 decoding="async">
-          </div>
-          <div class="phone__bezel" aria-hidden="true"></div>
-        </div>
       </div>
     </div>
   </section>
