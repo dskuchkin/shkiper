@@ -2904,7 +2904,7 @@ h1, h2, h3, p { overflow-wrap: anywhere; word-break: break-word; }
   .hero__inner {
     position: relative;
     gap: 0;
-    padding-top: 108px;
+    padding-top: 90px;
     padding-bottom: 24px;
     min-height: auto;
   }
@@ -2917,11 +2917,11 @@ h1, h2, h3, p { overflow-wrap: anywhere; word-break: break-word; }
   .hero__showcase { position: static; margin: 0; }
   .hero__showcase .hero-mascot {
     position: absolute;
-    top: 172px;
+    top: 182px;
     left: 50%;
     transform: translateX(-50%);
-    width: 86%;
-    max-width: 360px;
+    width: 94%;
+    max-width: 390px;
     margin: 0;
     z-index: 0;
   }
@@ -2934,7 +2934,7 @@ h1, h2, h3, p { overflow-wrap: anywhere; word-break: break-word; }
   .hero__title {
     position: relative;
     z-index: 2;
-    margin: 150px auto 0;
+    margin: 188px auto 0;
     font-size: clamp(22px, 6vw, 29px);
     line-height: 1.32;
   }
@@ -2945,15 +2945,15 @@ h1, h2, h3, p { overflow-wrap: anywhere; word-break: break-word; }
     line-height: 1.55;
   }
   .hero__hl {
-    background: rgba(8, 10, 18, 0.86);
+    background: rgba(6, 8, 14, 0.96);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    padding: 0.08em 0.34em;
+    padding: 0.1em 0.34em;
     border-radius: 7px;
   }
 
   /* Button clears the penguin's feet */
-  .hero__cta-wrap { margin-top: 60px; gap: 8px; }
+  .hero__cta-wrap { margin-top: 70px; gap: 8px; }
   .hero__cta .btn { width: 100%; }
   .hero__risk-line { font-size: 12px; }
 }
