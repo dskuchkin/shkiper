@@ -2887,3 +2887,60 @@ h1, h2, h3, p { overflow-wrap: anywhere; word-break: break-word; }
   .hero__side { grid-template-columns: 1fr; }
   .hero__showcase .hero-mascot { width: 210px; max-width: 64%; }
 }
+
+/* ==========================================================
+   MOBILE HERO EXPERIMENT — big penguin behind the offer,
+   offer text overlaid on the penguin body (desktop untouched).
+   Easy to revert: delete this whole block.
+   ========================================================== */
+@media (max-width: 720px) {
+  .hero__inner { gap: 0; padding-top: 74px; padding-bottom: 24px; min-height: auto; }
+
+  /* Big penguin as the backdrop; head sits under the kicker */
+  .hero__showcase .hero-mascot {
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    max-width: 380px;
+    margin: 0;
+    z-index: 0;
+  }
+  .hero__showcase .hero-mascot__img { animation: none; }
+
+  .hero__kicker { position: relative; z-index: 3; }
+
+  /* Offer text overlays the penguin's body with a dark readable halo */
+  .hero__title {
+    position: relative;
+    z-index: 2;
+    margin-top: 152px;
+    font-size: clamp(26px, 7.4vw, 34px);
+  }
+  .hero__title::before {
+    content: '';
+    position: absolute;
+    inset: -24px -14px;
+    z-index: -1;
+    background: radial-gradient(ellipse at center, rgba(5, 6, 12, 0.88) 0%, rgba(5, 6, 12, 0.6) 52%, transparent 82%);
+    filter: blur(5px);
+  }
+  .hero__subtitle {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+  }
+  .hero__subtitle::before {
+    content: '';
+    position: absolute;
+    inset: -14px -10px;
+    z-index: -1;
+    background: radial-gradient(ellipse at center, rgba(5, 6, 12, 0.78) 0%, transparent 78%);
+    filter: blur(5px);
+  }
+
+  /* Cards clear the penguin's feet, then the button */
+  .hero__showcase { position: static; margin-top: 78px; }
+  .hero__cta-wrap { margin-top: 18px; }
+}
