@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=54" />
+  <link rel="stylesheet" href="styles.css?v=55" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🐧</text></svg>" />
 </head>
 <body>
@@ -349,27 +349,27 @@
         <p class="section__lead">Не один сервер на всё — отдельное направление под каждую задачу.</p>
       </div>
       <div class="modes-layout">
-      <div class="modes-col">
-        <article class="mode">
+        <article class="mode mode--youtube">
           <div class="mode__head">
             <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-ad"/></svg></span>
             <h3>YouTube без рекламы</h3>
           </div>
-          <p>Меньше рекламы, стабильная загрузка, без зависаний.</p>
+          <p>Вообще без рекламы и в 4K. Видео грузится мгновенно — без зависаний и долгой буферизации.</p>
           <div class="mode__label">Подходит для:</div>
           <div class="mode__pills">
             <span class="mode__pill">YouTube на телефоне</span>
             <span class="mode__pill">на компьютере</span>
             <span class="mode__pill">на ТВ</span>
-            <span class="mode__pill">долгого просмотра</span>
+            <span class="mode__pill">4K без рекламы</span>
           </div>
         </article>
-        <article class="mode">
+
+        <article class="mode mode--neuro">
           <div class="mode__head">
             <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-sparkles"/></svg></span>
             <h3>Нейросети</h3>
           </div>
-          <p>Стабильный доступ к ИИ — без зарубежной симки.</p>
+          <p>Без капчи и блокировок аккаунтов. Чистые IP-адреса — аккаунт не банят, а капча не появляется.</p>
           <div class="mode__label">Работают:</div>
           <div class="mode__pills mode__pills--brand">
             <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/openai/default.svg" alt="" loading="lazy" decoding="async"> ChatGPT</span>
@@ -377,40 +377,40 @@
             <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/gemini/default.svg" alt="" loading="lazy" decoding="async"> Gemini</span>
             <span class="mode__pill">Grok</span>
             <span class="mode__pill"><img class="ic-brand" src="https://raw.githubusercontent.com/glincker/thesvg/main/public/icons/perplexity/default.svg" alt="" loading="lazy" decoding="async"> Perplexity</span>
+            <span class="mode__pill mode__pill--more">и другие</span>
           </div>
         </article>
-      </div>
 
-      <div class="modes-phone" aria-hidden="true">
-        <div class="phone phone--ip17">
-          <div class="phone__screen">
-            <img class="phone__screen-img" src="media/iphone-screen.png" alt="Скриншот приложения SHKIPER VPN" loading="lazy" decoding="async">
+        <div class="modes-phone" aria-hidden="true">
+          <div class="phone phone--ip17">
+            <div class="phone__screen">
+              <img class="phone__screen-img" src="media/iphone-screen.png" alt="Скриншот приложения SHKIPER VPN" loading="lazy" decoding="async">
+            </div>
+            <div class="phone__bezel" aria-hidden="true"></div>
           </div>
-          <div class="phone__bezel" aria-hidden="true"></div>
         </div>
-      </div>
 
-      <div class="modes-col">
-        <article class="mode">
+        <article class="mode mode--anti">
           <div class="mode__head">
             <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></span>
             <h3>Антиглушилки</h3>
           </div>
-          <p>Работают, когда сеть режут и оставляют белые списки.</p>
+          <p>Когда в городе глушат интернет и работают только белые списки — с SHKIPER связь остаётся.</p>
           <div class="mode__label">Подходит для:</div>
           <div class="mode__pills">
-            <span class="mode__pill">нестабильного мобильного интернета</span>
-            <span class="mode__pill">ограничений сети</span>
-            <span class="mode__pill">белых списков</span>
+            <span class="mode__pill">когда в городе глушат сеть</span>
+            <span class="mode__pill">работают только белые списки</span>
+            <span class="mode__pill">ограничений мобильного интернета</span>
             <span class="mode__pill">когда обычный VPN не подключается</span>
           </div>
         </article>
-        <article class="mode">
+
+        <article class="mode mode--ru">
           <div class="mode__head">
             <span class="mode__ic"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></span>
             <h3>Российские приложения</h3>
           </div>
-          <p>Банки и маркетплейсы открываются без ошибок.</p>
+          <p>Умная маршрутизация: российские приложения идут мимо VPN. Не нужно постоянно включать и выключать.</p>
           <div class="mode__label">Работают:</div>
           <div class="mode__pills mode__pills--brand">
             <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-sber"/></svg> Сбер</span>
@@ -422,9 +422,9 @@
             <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-max"/></svg> MAX</span>
             <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-gosuslugi"/></svg> Госуслуги</span>
             <span class="mode__pill"><svg class="ic-brand" viewBox="0 0 32 32"><use href="#b-yandex"/></svg> Яндекс</span>
+            <span class="mode__pill mode__pill--more">и другие</span>
           </div>
         </article>
-      </div>
       </div>
     </div>
   </section>
