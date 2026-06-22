@@ -2399,6 +2399,13 @@ h1, h2, h3, p { overflow-wrap: anywhere; word-break: break-word; }
   .killer__chips span { height: 32px; }
   .phone { width: 240px; height: auto; }
   .plan__amount { font-size: 36px; }
+
+  /* Comparison — give the three columns more room on the smallest phones */
+  .compare__row { --row-py: 12px; grid-template-columns: 1.5fr 0.75fr 0.75fr; padding: var(--row-py) 12px; gap: 6px; }
+  .compare__label { font-size: 13px; line-height: 1.3; }
+  .compare__row--head { font-size: 11px; }
+  .cmp-yes, .cmp-no { font-size: 11.5px; gap: 4px; }
+  .cmp-ic { width: 14px; height: 14px; }
 }
 
 
