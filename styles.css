@@ -879,6 +879,24 @@ p { margin: 0 0 1em; }
 }
 .pain__icon { transition: transform .35s var(--t), background .25s var(--t); }
 .pain:hover .pain__icon { transform: scale(1.1) rotate(-4deg); }
+/* Editorial top row: icon left, big ghosted index right */
+.pain__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.pain__top .pain__icon { margin-bottom: 0; }
+.pain__num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.08);
+  transition: color .3s var(--t);
+}
+.pain:hover .pain__num { color: rgba(91, 123, 255, 0.45); }
 .pain__emoji {
   font-size: 36px;
   margin-bottom: 14px;

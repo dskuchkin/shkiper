@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=58" />
+  <link rel="stylesheet" href="styles.css?v=59" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🐧</text></svg>" />
 </head>
 <body>
@@ -436,30 +436,42 @@
     <div class="container">
       <div class="section__head">
         <div class="eyebrow">Знакомо?</div>
-        <h2 class="section__title">С обычным VPN <span class="text-gradient">половина интернета отваливается</span></h2>
-        <p class="section__lead">Сеть режут, приложения не открываются, банки видят VPN и блокируют. Каждый день одно и то же.</p>
+        <h2 class="section__title">Интернет есть. А <span class="text-gradient">пользоваться им — нет</span></h2>
+        <p class="section__lead">Сеть ловит, VPN подключён — а каждый день всё равно приходится что-то выключать, переключать и подбирать заново.</p>
       </div>
       <div class="pains pains--4">
-        <div class="pain">
-          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-signal"/></svg></div>
-          <h3>Связь есть, а сайты не грузятся</h3>
-          <p>Telegram тупит, YouTube висит, нейросети не открываются.</p>
-        </div>
-        <div class="pain">
-          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-ban"/></svg></div>
-          <h3>VPN подключился, но толку нет</h3>
-          <p>Пишет «подключено», а сайты всё равно не работают.</p>
-        </div>
-        <div class="pain">
-          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></div>
-          <h3>Банки и маркетплейсы ругаются</h3>
-          <p>Обычный VPN меняет весь трафик — и приложения блокируют доступ.</p>
-        </div>
-        <div class="pain">
-          <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-refresh"/></svg></div>
-          <h3>Вечное «включи-выключи»</h3>
-          <p>VPN для YouTube → выключить для Сбера → включить для ChatGPT…</p>
-        </div>
+        <article class="pain">
+          <div class="pain__top">
+            <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-no-signal"/></svg></div>
+            <span class="pain__num">01</span>
+          </div>
+          <h3>4G есть, а открывается только «разрешённое»</h3>
+          <p>Телефон показывает полную сеть, но Telegram висит, сайты не грузятся, видео не запускается.</p>
+        </article>
+        <article class="pain">
+          <div class="pain__top">
+            <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-refresh"/></svg></div>
+            <span class="pain__num">02</span>
+          </div>
+          <h3>VPN горит зелёным — а доступа нет</h3>
+          <p>Статус «Подключено» есть, а интернета через VPN нет. И начинается рулетка: сменить страну, сервер, протокол, приложение.</p>
+        </article>
+        <article class="pain">
+          <div class="pain__top">
+            <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></div>
+            <span class="pain__num">03</span>
+          </div>
+          <h3>Чтобы оплатить — сначала выключи VPN</h3>
+          <p>Банк, Ozon, Wildberries, Яндекс, Госуслуги или MAX не пускают, пока VPN включён.</p>
+        </article>
+        <article class="pain">
+          <div class="pain__top">
+            <div class="pain__icon"><svg class="ic" viewBox="0 0 24 24"><use href="#i-ban"/></svg></div>
+            <span class="pain__num">04</span>
+          </div>
+          <h3>Нейросети принимают вас за бота</h3>
+          <p>Вместо работы с ChatGPT, Claude и Gemini — капчи, повторные входы и «подозрительная активность».</p>
+        </article>
       </div>
     </div>
   </section>
